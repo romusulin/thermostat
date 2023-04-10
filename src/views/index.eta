@@ -1,0 +1,66 @@
+<!DOCTYPE HTML><html><head>
+    <style>
+        .hour {
+            background-color: lightcyan;
+            border-radius: 3px;
+        }
+        input[type=checkbox] {
+            transform: scale(2);
+            margin-left:4px;
+        }
+        input[type=submit] {
+            height: 3em;
+            width: 12em;
+        }
+        span {
+            margin: 3px;
+            padding: 3px;
+            display: inline-block;
+        }
+    </style>
+    <title>Termostat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function refreshTime() {
+            document.getElementById("vrijeme").innerHTML = new Date().toLocaleTimeString("hr");
+        }
+
+        window.onload = refreshTime;
+        window.setInterval(refreshTime, 1000);
+    </script>
+</head><body>
+<h1>Termostat</h1>
+<p>Trenutno vrijeme: <strong id="vrijeme"></strong></p>
+<p>Pec je <strong><%= it.status %></strong>.</p>
+<form action="/hours" method="post">
+    <span class="hour">00 <input type="checkbox" name="0" <%= it.hours[0] %>></span>
+    <span class="hour">01 <input type="checkbox" name="1" <%= it.hours[1] %>></span>
+    <span class="hour">02 <input type="checkbox" name="2" <%= it.hours[2] %>></span>
+    <span class="hour">03 <input type="checkbox" name="3" <%= it.hours[3] %>></span>
+    <span class="hour">04 <input type="checkbox" name="4" <%= it.hours[4] %>></span>
+    <span class="hour">05 <input type="checkbox" name="5" <%= it.hours[5] %>></span>
+    <br>
+    <span class="hour">06 <input type="checkbox" name="6" <%= it.hours[6] %>></span>
+    <span class="hour">07 <input type="checkbox" name="7" <%= it.hours[7] %>></span>
+    <span class="hour">08 <input type="checkbox" name="8" <%= it.hours[8] %>></span>
+    <span class="hour">09 <input type="checkbox" name="9" <%= it.hours[9] %>></span>
+    <span class="hour">10 <input type="checkbox" name="10" <%= it.hours[10] %>></span>
+    <span class="hour">11 <input type="checkbox" name="11" <%= it.hours[11] %>></span>
+    <br>
+    <span class="hour">12 <input type="checkbox" name="12" <%= it.hours[12] %>></span>
+    <span class="hour">13 <input type="checkbox" name="13" <%= it.hours[13] %>></span>
+    <span class="hour">14 <input type="checkbox" name="14" <%= it.hours[14] %>></span>
+    <span class="hour">15 <input type="checkbox" name="15" <%= it.hours[15] %>></span>
+    <span class="hour">16 <input type="checkbox" name="16" <%= it.hours[16] %>></span>
+    <span class="hour">17 <input type="checkbox" name="17" <%= it.hours[17] %>></span>
+    <br>
+    <span class="hour">18 <input type="checkbox" name="18" <%= it.hours[18] %>></span>
+    <span class="hour">19 <input type="checkbox" name="19" <%= it.hours[19] %>></span>
+    <span class="hour">20 <input type="checkbox" name="20" <%= it.hours[20] %>></span>
+    <span class="hour">21 <input type="checkbox" name="21" <%= it.hours[21] %>></span>
+    <span class="hour">22 <input type="checkbox" name="22" <%= it.hours[22] %>></span>
+    <span class="hour">23 <input type="checkbox" name="23" <%= it.hours[23] %>></span>
+    <br><br>
+    <input type="submit" value="Primijeni sate">
+</form>
+</body></html>

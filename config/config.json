@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "user",
+    "password": "password",
+    "database": "termostat",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mariadb",
+    "sequelizeStorageTableName": "sequelize_seeder_data"
+  },
+  "production": {
+    "database": "rokormwc_termostat",
+    "dialect": "mariadb",
+    "use_env_variable": "DATABASE_URL",
+    "sequelizeStorageTableName": "sequelize_seeder_data"
+  }
+}
